@@ -251,12 +251,12 @@ canvas.hide {
 }
 
 .type-line {
-  font-size: 1.5rem;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  white-space: nowrap;
-  border-right: 2px solid rgba(255,255,255,0.7);
-  padding-right: 4px;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+  max-width: 90vw;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  display: inline-block;
 }
 
 #typing-screen .type-line {
@@ -264,6 +264,13 @@ canvas.hide {
   bottom: auto;
   width: auto;
   text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+      @media (max-width: 400px) {
+  .type-line {
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+  }
 }
 
   </style>
@@ -960,3 +967,4 @@ async function startTyping() {
   </script>
 </body>
 </html>
+
